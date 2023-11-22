@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "404658091758",
+    "firebase_url": "https://hackelite-app-default-rtdb.firebaseio.com",
+    "project_id": "hackelite-app",
+    "storage_bucket": "hackelite-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404658091758:android:43dc298b33381bb4cd25ff",
+        "android_client_info": {
+          "package_name": "com.hackelite.hack_elite"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCztr06StCqMEnTE1sjacynmGVzLAgK4Es"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404658091758:android:e2bad9c5bfb8e9d7cd25ff",
+        "android_client_info": {
+          "package_name": "com.hackelite.hack_elite.hack_elite"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCztr06StCqMEnTE1sjacynmGVzLAgK4Es"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
