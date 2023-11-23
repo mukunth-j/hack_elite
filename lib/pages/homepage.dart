@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:hack_elite/temperature.dart';
+import 'package:hack_elite/pages/temperature.dart';
+import 'package:hack_elite/util/smart_device_box.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,6 +12,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List mySmartDevices = [
+    // [ smartDeviceName, iconPath , powerStatus ]
+    ["Smart Light", "lib/icons/light-bulb.png", true],
+    ["Smart AC", "lib/icons/air-conditioner.png", false],
+    ["Smart TV", "lib/icons/smart-tv.png", false],
+    ["Smart Fan", "lib/icons/fan.png", false],
+  ];
+
+  // power button switched
+  void powerSwitchChanged(bool value, int index) {
+    setState(() {
+      mySmartDevices[index][2] = value;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -119,66 +135,33 @@ class _HomePageState extends State<HomePage> {
                     ),
                     const SizedBox(height: 48),
                     const Text(
-                      'SERVICES',
+                      'SERVICE CONTROLS',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     const SizedBox(height: 16),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        _cardMenu(
-                          icon: 'assets/images/energy.png',
-                          title: 'ENERGY',
-                        ),
-                        _cardMenu(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const TemperaturePage(),
-                              ),
-                            );
-                          },
-                          icon: 'assets/images/temperature.png',
-                          title: 'TEMPERATURE',
-                          color: Colors.indigoAccent,
-                          fontColor: Colors.white,
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 28),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        _cardMenu(
-                          icon: 'assets/images/water.png',
-                          title: 'WATER',
-                        ),
-                        _cardMenu(
-                          icon: 'assets/images/entertainment.png',
-                          title: 'ENTERTAINMENT',
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 28),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        _cardMenu(
-                          icon: 'assets/images/water.png',
-                          title: 'WATER',
-                        ),
-                        _cardMenu(
-                          icon: 'assets/images/entertainment.png',
-                          title: 'ENTERTAINMENT',
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 28),
                   ],
+                ),
+              ),
+              Expanded(
+                child: GridView.builder(
+                  itemCount: 4,
+                  physics: const BouncingScrollPhysics(),
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 1 / 1.3,
+                  ),
+                  itemBuilder: (context, index) {
+                    return SmartDeviceBox(
+                      smartDeviceName: mySmartDevices[index][0],
+                      iconPath: mySmartDevices[index][1],
+                      powerOn: mySmartDevices[index][2],
+                      onChanged: (value) => powerSwitchChanged(value, index),
+                    );
+                  },
                 ),
               ),
             ],

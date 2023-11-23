@@ -44,7 +44,7 @@ class SmartDeviceBox extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 25.0),
+                      padding: const EdgeInsets.only(left: 10.0),
                       child: Text(
                         smartDeviceName,
                         style: TextStyle(
