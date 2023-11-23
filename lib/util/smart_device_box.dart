@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class SmartDeviceBox extends StatelessWidget {
   final String smartDeviceName;
@@ -21,7 +20,7 @@ class SmartDeviceBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.all(5.0),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),

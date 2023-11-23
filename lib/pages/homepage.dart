@@ -14,10 +14,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List mySmartDevices = [
     // [ smartDeviceName, iconPath , powerStatus ]
-    ["Smart Light", "lib/icons/light-bulb.png", true],
-    ["Smart AC", "lib/icons/air-conditioner.png", false],
-    ["Smart TV", "lib/icons/smart-tv.png", false],
-    ["Smart Fan", "lib/icons/fan.png", false],
+    ["Light", "lib/icons/light-bulb.png", true],
+    ["Sprinkle Water", "lib/icons/air-conditioner.png", false],
+    ["View Camera", "lib/icons/smart-tv.png", false],
+    ["Buzzer", "lib/icons/fan.png", false],
   ];
 
   // power button switched
