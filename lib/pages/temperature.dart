@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class TemperaturePage extends StatefulWidget {
@@ -107,11 +104,11 @@ class _TemperaturePageState extends State<TemperaturePage> {
                             },
                             max: 30,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 24),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
+                              children: [
                                 Text('0\u00B0'),
                                 Text('15\u00B0'),
                                 Text('30\u00B0'),
@@ -147,11 +144,11 @@ class _TemperaturePageState extends State<TemperaturePage> {
                             },
                             max: 30,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 24),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: const [
+                              children: [
                                 Text('LOW'),
                                 Text('MID'),
                                 Text('HIGH'),

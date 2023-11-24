@@ -34,8 +34,8 @@ class _HomePageState extends State<HomePage> {
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.indigo.shade50,
         color: Colors.white,
-        animationDuration: Duration(milliseconds: 300),
-        items: [
+        animationDuration: const Duration(milliseconds: 300),
+        items: const [
           Icon(Icons.home, color: Colors.indigo),
           Icon(Icons.favorite, color: Colors.indigo),
           Icon(Icons.settings, color: Colors.indigo)
@@ -48,9 +48,9 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text(
                     'HI HACK ELITE',
                     style: TextStyle(
@@ -113,17 +113,17 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 12),
                     const Center(
                       child: Text(
                         'Temperature',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 22,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 13),
                     const Center(
                       child: Text(
                         'Smart Sericulture',
@@ -133,15 +133,15 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 48),
+                    const SizedBox(height: 28),
                     const Text(
                       'SERVICE CONTROLS',
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 28),
                   ],
                 ),
               ),

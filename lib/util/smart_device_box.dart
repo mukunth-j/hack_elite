@@ -20,11 +20,13 @@ class SmartDeviceBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(5.0),
+      padding: const EdgeInsets.all(2.0),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
-          color: powerOn ? Colors.grey[900] : Color.fromARGB(44, 164, 167, 189),
+          color: powerOn
+              ? Colors.grey[900]
+              : const Color.fromARGB(44, 164, 167, 189),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 25.0),
@@ -43,7 +45,7 @@ class SmartDeviceBox extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 10.0),
+                      padding: const EdgeInsets.only(left: 17.0),
                       child: Text(
                         smartDeviceName,
                         style: TextStyle(
