@@ -1,3 +1,4 @@
+import 'package:firebase_database/firebase_database.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hack_elite/pages/temperature.dart';
@@ -12,8 +13,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final database = FirebaseDatabase.instance;
+  final devicesReference =
+      FirebaseDatabase.instance.reference().child('devices');
+
   List mySmartDevices = [
-    // [ smartDeviceName, iconPath , powerStatus ]
     ["Light", "lib/icons/light-bulb.png", true],
     ["Sprinkle Water", "lib/icons/air-conditioner.png", false],
     ["View Camera", "lib/icons/smart-tv.png", false],
@@ -24,6 +28,11 @@ class _HomePageState extends State<HomePage> {
   void powerSwitchChanged(bool value, int index) {
     setState(() {
       mySmartDevices[index][2] = value;
+    });
+
+    // Update Firebase database
+    devicesReference.child('device$index').update({
+      'powerOn': value,
     });
   }
 
