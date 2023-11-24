@@ -191,7 +191,9 @@ class _TemperaturePageState extends State<TemperaturePage> {
             borderRadius: BorderRadius.circular(18),
           ),
           child: Image.asset(
-            isActive ? 'assets/images/fan-2.png' : 'assets/images/fan-1.png',
+            isActive
+                ? 'assets/images/temperature.png'
+                : 'assets/images/temperature.png',
           ),
         ),
         const SizedBox(height: 12),
